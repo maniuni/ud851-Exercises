@@ -50,7 +50,7 @@ public class NetworkUtils {
     public static URL buildUrl(String githubSearchQuery) {
         // TODO (1) Fill in this method to build the proper Github query URL
         Uri uri = Uri.parse(GITHUB_BASE_URL).buildUpon()
-                .appendQueryParameter(PARAM_QUERY, sortBy)
+                .appendQueryParameter(PARAM_QUERY, githubSearchQuery)
                 .appendQueryParameter(PARAM_SORT, sortBy)
                 .build();
         URL url = null;
@@ -60,7 +60,7 @@ public class NetworkUtils {
         catch (MalformedURLException e){
             e.printStackTrace();
         }
-        return null;
+        return url;
     }
 
     /**
