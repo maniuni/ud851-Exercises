@@ -31,10 +31,13 @@ public class TaskContentProvider extends ContentProvider {
     In this case, you’re working with a SQLite database, so you’ll need to
     initialize a DbHelper to gain access to it.
      */
+    private TaskDbHelper dbHelper;
+
     @Override
     public boolean onCreate() {
         // TODO (2) Complete onCreate() and initialize a TaskDbhelper on startup
         // [Hint] Declare the DbHelper as a global variable
+        dbHelper = new TaskDbHelper(getContext());
 
         return false;
     }
