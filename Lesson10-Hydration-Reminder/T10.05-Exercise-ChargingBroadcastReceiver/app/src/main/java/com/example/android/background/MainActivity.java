@@ -170,7 +170,7 @@ public class MainActivity extends AppCompatActivity implements
         public void onReceive(Context context, Intent intent) {
             if (intent.getAction().equals(Intent.ACTION_POWER_CONNECTED)) {
                 showCharging(true);
-            } else {
+            } else if (intent.getAction().equals(Intent.ACTION_POWER_DISCONNECTED)) {
                 showCharging(false);
             }
         }
